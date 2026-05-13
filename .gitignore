@@ -1,0 +1,23 @@
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor noise
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local notes / scratch
+*.local
+*.local.md
+scratch/
+.scratch/
+
+# Anything Claude Code-side that should not leak
+.claude/
+.env
+.env.*
+!.env.example
