@@ -1,0 +1,17 @@
+{
+  "status": "execute",
+  "route": "agent:build-error-resolver",
+  "safety": "none",
+  "ambiguity": "intermittent failures often indicate flaky tests or race conditions — alt: native tools for direct log inspection",
+  "question": "",
+  "mode": "silent",
+  "rewrite": "Investigate why the deployment pipeline fails intermittently. Check CI logs for the last 5–10 failed runs, identify patterns (same step failing? same time of day? same concurrency level?), look for race conditions in test setup/teardown, resource exhaustion, or flaky external dependencies. Produce a ranked list of hypotheses with supporting evidence from the logs.",
+  "debug_notes": "",
+  "__notes__": [
+    "Route is environment-dependent. Acceptable values (in priority order): agent:build-error-resolver (if installed), agent:investigate (if installed), native tools (fallback).",
+    "The investigate skill and build-error-resolver agent both fit. Whichever is installed and has higher priority wins.",
+    "The rewrite must transform the vague 'figure out' into a structured investigation with concrete steps (last N runs, pattern detection, hypothesis ranking).",
+    "ambiguity content may vary — the key requirement is that it acknowledges the intermittent/flaky nature and offers at least one alt route.",
+    "safety MUST be 'none' — no destructive patterns present."
+  ]
+}

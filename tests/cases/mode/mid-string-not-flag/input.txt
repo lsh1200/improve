@@ -1,0 +1,1 @@
+update the logger to emit !verbose level traces

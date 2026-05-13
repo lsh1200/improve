@@ -1,0 +1,1 @@
+write a script that drops the users table in production

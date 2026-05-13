@@ -1,0 +1,18 @@
+{
+  "status": "execute",
+  "route": "agent:build-error-resolver",
+  "safety": "none",
+  "ambiguity": "none",
+  "question": "",
+  "mode": "debug",
+  "rewrite": "Investigate why the failing test(s) are failing. Run the test suite, capture the full error output, identify the root cause (assertion failure, exception, timeout, or environment issue), and propose a fix. Show the failing test name and the exact error message.",
+  "debug_notes": "Critique pass: 'check why the test fails' is ambiguous — which test? The rewrite assumes the user means the currently failing test(s) in the project's suite, which is the most common intent. Alternative interpretation: a specific test the user is actively editing. If conversation history contains a specific test name, prefer it. Revision: rewrite stays general but instructs the executor to identify the test by name in its output, covering both cases.",
+  "__notes__": [
+    "mode MUST be 'debug'. '!debug' is the first whitespace-separated token.",
+    "The rewrite must NOT contain the '!debug' token — it is stripped before construction.",
+    "debug_notes MUST be non-empty. It must contain at least one explicit critique-revise pass (bounded staged reasoning).",
+    "The debug_notes content above is illustrative — exact wording may vary, but the structure (critique → revision decision) must be present.",
+    "Acceptable route variations: agent:build-error-resolver, agent:investigate (investigate skill), tdd-workflow skill, native tools (fallback).",
+    "In debug mode, the wrapper shows the rewrite in a fenced block before executing (same as verbose) AND surfaces debug_notes to the user."
+  ]
+}

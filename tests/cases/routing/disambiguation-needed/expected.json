@@ -1,0 +1,18 @@
+{
+  "status": "clarify",
+  "route": "none",
+  "safety": "none",
+  "ambiguity": "none",
+  "question": "Review what? A PR, a specific file, a design, your uncommitted changes since main, or something else?",
+  "mode": "silent",
+  "rewrite": "",
+  "debug_notes": "",
+  "__notes__": [
+    "status MUST be 'clarify'. A single bare word with no object or context gives the router nothing to work with.",
+    "route MUST be 'none' when status is 'clarify'.",
+    "rewrite MUST be empty string when status is 'clarify'.",
+    "The question content may vary in exact wording but MUST enumerate at least 3 plausible interpretations of 'review' to help the user self-identify their intent.",
+    "Acceptable question variations: any question that disambiguates between PR review, file review, design review, and git diff review.",
+    "This case validates the empty-ish / too-vague input handling path, distinct from the empty-input guard (which prints usage on zero content)."
+  ]
+}

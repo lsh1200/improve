@@ -1,0 +1,16 @@
+{
+  "status": "execute",
+  "route": "agent:code-reviewer",
+  "safety": "none",
+  "ambiguity": "none",
+  "question": "",
+  "mode": "silent",
+  "rewrite": "Review src/auth.ts for correctness, security vulnerabilities, code quality, and adherence to project conventions. Pay particular attention to authentication and authorization logic, input validation, and error handling. Report findings by severity (CRITICAL / HIGH / MEDIUM / LOW).",
+  "debug_notes": "",
+  "__notes__": [
+    "Route MUST be 'agent:code-reviewer'. The user explicitly named 'code-reviewer' — explicit user mention wins over all heuristics per the routing tie-break rules.",
+    "The rewrite should expand the vague 'look at' into a structured review request. The file path src/auth.ts must be preserved verbatim.",
+    "auth.ts suggests security-sensitive code; the rewrite correctly scopes to auth/security concerns. The security-reviewer agent is NOT chosen because the user explicitly named code-reviewer.",
+    "ambiguity may note 'agent:security-reviewer' as an alt if the subagent notices the auth context, but route remains agent:code-reviewer."
+  ]
+}

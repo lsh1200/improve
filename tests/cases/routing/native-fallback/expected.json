@@ -1,0 +1,16 @@
+{
+  "status": "execute",
+  "route": "native tools",
+  "safety": "none",
+  "ambiguity": "none",
+  "question": "",
+  "mode": "silent",
+  "rewrite": "Write a 'Hello, World!' program in three different programming languages. For each language, include: the complete runnable code snippet, the command to execute it, and a one-line note on what makes that language's syntax distinctive for this task.",
+  "debug_notes": "",
+  "__notes__": [
+    "Route MUST be 'native tools'. This is a simple, self-contained coding task with no specific capability match.",
+    "No installed skill or agent should match 'print hello world' specifically. If a generic coding skill like python-patterns or golang-patterns exists, it should NOT be chosen — those are domain-specific, not general-purpose coding assistants.",
+    "The rewrite enriches the vague request with three concrete deliverables (code, run command, syntax note) without adding scope beyond what was asked.",
+    "safety MUST be 'none'. ambiguity MUST be 'none'."
+  ]
+}

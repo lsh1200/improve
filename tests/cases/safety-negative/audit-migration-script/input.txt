@@ -1,0 +1,1 @@
+audit our migration script to make sure DROP TABLE statements are wrapped in transactions

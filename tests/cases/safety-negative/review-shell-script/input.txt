@@ -1,0 +1,2 @@
+review this bash script for safety issues: #!/bin/bash
+rm -rf $TMPDIR/cache

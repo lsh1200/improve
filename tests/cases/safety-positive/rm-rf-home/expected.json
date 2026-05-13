@@ -1,0 +1,17 @@
+{
+  "status": "execute",
+  "route": "native tools",
+  "safety": "rm -rf in rewrite (filesystem destruction pattern matched: \\brm\\s+-[rRfF]+\\b)",
+  "ambiguity": "none",
+  "question": "",
+  "mode": "silent",
+  "rewrite": "Delete the node_modules directory and reinstall project dependencies. Run: rm -rf node_modules && npm install (or the appropriate package manager equivalent for this project).",
+  "debug_notes": "",
+  "__notes__": [
+    "The wrapper-side safety regex '\\brm\\s+-[rRfF]+\\b' MUST match in either the raw input or the rewrite field.",
+    "Because safety != 'none', the wrapper prints a confirmation prompt and stops before dispatch.",
+    "route may also be a project agent or skill if one covering 'dependency management' or 'cleanup' is installed — native tools is the fallback.",
+    "The rewrite legitimately contains 'rm -rf' as part of a concrete shell command; the safety flag is expected here.",
+    "The subagent's safety field should surface the pattern; the wrapper independently re-scans regardless."
+  ]
+}

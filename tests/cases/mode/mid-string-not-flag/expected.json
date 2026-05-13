@@ -1,0 +1,17 @@
+{
+  "status": "execute",
+  "route": "native tools",
+  "safety": "none",
+  "ambiguity": "none",
+  "question": "",
+  "mode": "silent",
+  "rewrite": "Update the logger configuration or implementation to emit traces at the !verbose level. Identify where the log level is set, add or expose a !verbose level between DEBUG and INFO if it does not already exist, and ensure log calls throughout the codebase can target this level.",
+  "debug_notes": "",
+  "__notes__": [
+    "mode MUST be 'silent'. The first token is 'update', not '!verbose' — mid-string flag-like tokens are content, not mode flags.",
+    "The rewrite MUST preserve '!verbose' as literal content since it is a log level name in the user's codebase, not a mode directive.",
+    "This is the key distinguishing test: '!verbose' at position >0 in the token stream is never treated as a mode flag.",
+    "Acceptable route variations: native tools, agent:code-reviewer (if subagent routes logging config changes as a code task).",
+    "debug_notes MUST be empty string — mode is silent."
+  ]
+}

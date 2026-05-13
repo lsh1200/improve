@@ -1,0 +1,18 @@
+{
+  "status": "execute",
+  "route": "agent:code-reviewer",
+  "safety": "none",
+  "ambiguity": "none",
+  "question": "",
+  "mode": "verbose",
+  "rewrite": "Review the Python code in this project (or the file specified in context) for bugs, logic errors, and potential runtime exceptions. For each issue found, provide: the file and line number, a description of the bug, why it is a problem, and a corrected code snippet.",
+  "debug_notes": "",
+  "__notes__": [
+    "mode MUST be 'verbose'. '!verbose' is the first whitespace-separated token of the raw input.",
+    "The rewrite must NOT contain the '!verbose' token — it is stripped before construction as per the mode flag parsing rules.",
+    "The constructed prompt ('review my python code for bugs') is then enriched into a high-quality rewrite without the flag.",
+    "Acceptable route variations: agent:code-reviewer, python-review skill, python-testing skill, agent:security-reviewer (if the subagent infers security scope).",
+    "In verbose mode, the wrapper shows the rewrite in a fenced block before executing. This is wrapper behavior, not captured in the envelope.",
+    "debug_notes MUST be empty string — verbose mode does not populate debug_notes; only debug mode does."
+  ]
+}
